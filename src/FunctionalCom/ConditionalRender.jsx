@@ -8,15 +8,9 @@
 // }
 // export default ConditionalRender;
 
-function ConditionalRender(){
-     let isLogged = true;
-     return(
-        <>
-        {isLogged ? <h1>Welcome</h1> : <h1> Login</h1>}
-        </>
-     )
-
+function ConditionalRender() {
+  let isLogged = true;
+  return <>{isLogged ? <h1>Welcome</h1> : <h1> Login</h1>}</>;
 }
 
 export default ConditionalRender;
-
