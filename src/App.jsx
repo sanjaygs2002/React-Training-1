@@ -11,6 +11,10 @@ import Task1 from "./FunctionalCom/Task1";
 import Form from "./FunctionalCom/Form";
 import UnControlForm from "./FunctionalCom/UnControlForm";
 import LoginForm from "./FunctionalCom/LoginForm";
+import FormHook from "./FunctionalCom/FormHook";
+import Parent from "./Lifting/Parent";
+import DisplayName from "./Lifting/DisplayName";
+import UpdateName from "./Lifting/UpdateName";
 
 function App() {
   return (
@@ -25,9 +29,13 @@ function App() {
           <Route path="/rendering" element={<ConditionalRender />} />
           <Route path="/list" element={<List />} />
           <Route path="/task1" element={<Task1 />} />
-          <Route path="/form" element={<Form/>}/>
-          <Route path="/UnControlForm" element={<UnControlForm/>}/>
-          <Route path="/login" element={<LoginForm/>}/>
+          <Route path="/form" element={<Form />} />
+          <Route path="/UnControlForm" element={<UnControlForm />} />
+          <Route path="/login" element={<LoginForm />} />
+          <Route path="/hookForm" element={<FormHook />} />
+          <Route path="/parent" element={<Parent/>}/>
+          <Route path="/display" element={<DisplayName/>}/>
+          <Route path="update" element={<UpdateName/>}/>
         </Routes>
       </BrowserRouter>
     </>

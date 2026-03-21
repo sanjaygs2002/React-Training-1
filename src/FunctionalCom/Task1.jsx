@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const arr = ["Banana","Apples",  "Mongo"];
+const arr = ["Banana", "Apples", "Mongo"];
 
 function Task1() {
   const [item, setItem] = useState(arr);
@@ -14,20 +14,20 @@ function Task1() {
       setNewItem("");
     }
   };
-  
-  
+
   const removeItem = (itemToRemove) => {
     setItem(item.filter((item) => item !== itemToRemove));
   };
 
-//   const displayItem = item
-//     .filter((item) => item.toLowerCase().includes(searchTerm.toLowerCase()))
-//     .sort((a, b) => (sortAsc ? a.localeCompare(b) : b.localeCompare(a)));
+  //   const displayItem = item
+  //     .filter((item) => item.toLowerCase().includes(searchTerm.toLowerCase()))
+  //     .sort((a, b) => (sortAsc ? a.localeCompare(b) : b.localeCompare(a)));
   const displayItem = item
-    .filter((item) => item.toLowerCase().includes(searchTerm.toLowerCase())).sort((a,b)=>{
-        console.log(a,b);
-        return sortAsc ? a.localeCompare(b) : b.localeCompare(a);
-    })
+    .filter((item) => item.toLowerCase().includes(searchTerm.toLowerCase()))
+    .sort((a, b) => {
+      console.log(a, b);
+      return sortAsc ? a.localeCompare(b) : b.localeCompare(a);
+    });
   return (
     <>
       <h2>Fruit List</h2>

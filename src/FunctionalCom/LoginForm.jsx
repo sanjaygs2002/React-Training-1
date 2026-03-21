@@ -1,30 +1,50 @@
 import { useState } from "react";
 
-function LoginForm(){
-    const [input, setInput]= useState({email:"",password:""})
+function LoginForm() {
+  const [input, setInput] = useState({ email: "", password: "" });
 
-    function handleChange(e){
-        setInput({...input,[e.target.name]:[e.target.value]})
+  const pattern = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{8,}$/;
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setInput({ ...input, [name]: value });
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (!pattern.test(input.password)) {
+      alert("Password not strong");
+      return;
     }
-
-    function handleSubmit(e){
-        e.preventDefault();
-        console.log("Form data submitted",input);
-    }
-
-    return(
-        <>
-        <form onSubmit={handleSubmit}>
-            <input name="email"
-            type="email"
-            onChange={handleChange} />
-            <input name="password"
-            type="password"
-            onChange={handleChange}/>
-            <button type="sumbit">Submit</button>
-        </form>
-        </>
-    )
+    console.log("Form data submitted", input);
+    setInput({
+      email: "",
+      password: "",
+    });
+  }
+  return (
+    <>
+      <form onSubmit={handleSubmit}>
+        <input
+          name="email"
+          type="email"
+          placeholder="Enter the email"
+          value={input.email}
+          onChange={handleChange}
+        />
+        <br />
+        <br />
+        <input
+          name="password"
+          type="password"
+          placeholder="Enter the password"
+          value={input.password}
+          onChange={handleChange}
+        />
+        <br />
+        <button type="submit">Submit</button>
+      </form>
+    </>
+  );
 }
 
 export default LoginForm;
