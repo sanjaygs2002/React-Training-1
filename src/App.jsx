@@ -18,17 +18,27 @@ import { lazy,Suspense } from "react";
 import ConsumeContext from "./Context/ConsumeContext";
 import ProContext from "./Context/ProContext";
 // error boundary
-import {ErrorBoundary} from "react-error-boundary";
-import ParentRef from "./ForwardRef/ParentRef";
 
+import ParentRef from "./ForwardRef/ParentRef";
+import Sample from "./Accessibility/sample";
+import ApiCall from "./UseEffectHook/ApiCall";
+import Timer from "./UseEffectHook/Timers";
+import Consume from "./Context/Auth/Consume";
+import Provider from "./Context/Auth/Provider";
+import {ErrorBoundary} from "react-error-boundary";
+import Message from "./Portals/Message";
+import { Profiler } from "react";
 const LoginForm = lazy(()=>import("./FunctionalCom/LoginForm"));
 
-
+// function onRender(id,phase,actualDuation,baseDuration,startTime,commitTime,interactions){
+// console.log(id,phase,actualDuation,baseDuration,startTime,commitTime,interactions);
+// }
 function App() {
   return (
     <>
-    <ErrorBoundary fallback={<h1>Error happens please check once again</h1>}>
-        <BrowserRouter>
+    <ErrorBoundary fallback={<p>Something went worng, try later</p>}>
+    
+          <BrowserRouter>
       <Suspense fallback={<h2>Loading....</h2>}>
         <Routes>
           <Route path="*" element={<Counter />} />
@@ -41,7 +51,6 @@ function App() {
           <Route path="/task1" element={<Task1 />} />
           <Route path="/form" element={<Form />} />
           <Route path="/UnControlForm" element={<UnControlForm />} />
-          {/* <Route path="/login" element={<LoginForm />} /> */}
            <Route path="/login" element={<LoginForm />} />
           <Route path="/hookForm" element={<FormHook />} />
           <Route path="/parent" element={<Parent/>}/>
@@ -51,11 +60,24 @@ function App() {
           <Route path = "/consumeValue" element={<ConsumeContext/>}/>
           <Route path="/provider" element={<ProContext/>}/>
           <Route path="/parentRef" element={<ParentRef/>}/>
+          <Route path="/sample" element={<Sample/>}/>
+          <Route path="/apicall" element={<ApiCall/>}/>
+          {/* <Profiler  onRender={onRender}> */}
+              <Route path="/timer" element={<Timer/>}/>
+         {/* </Profiler> */}
+          
+          <Route path="/consume" element={<Consume/>}/>
+          <Route path="/message" element={<Message/>}/>
+          {/* <Route path="/element" element={<Element/>}/> */}
         </Routes>
          </Suspense>
       </BrowserRouter>
-
+  
     </ErrorBoundary>
+    
+        
+
+ 
       
     </>
   );
