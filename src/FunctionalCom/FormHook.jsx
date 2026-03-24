@@ -34,13 +34,13 @@ function FormHook() {
         <input
           {...register("email", {
             required: "Email is required",
-            message:"Invalid message"
+            message: "Invalid message",
           })}
           type="email"
           placeholder="Enter the email"
         />
         {errors.email && <p>{errors.email.message}</p>}
-      
+
         <input
           {...register("password", {
             pattern: {

@@ -39,7 +39,7 @@ const InputEvent = () => {
         onKeyDown={(e) => console.log("Key pressing", e.key)}
         onKeyUp={(e) => console.log("Typed keys released", e.key)}
       />
-      
+
       <h4>Drag and drop</h4>
 
       <div onDragOver={(e) => e.preventDefault} onDrop={handleDrop}>

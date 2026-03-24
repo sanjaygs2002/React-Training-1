@@ -1,11 +1,8 @@
-function DisplayName({name}){
-   
-return(
+function DisplayName({ name }) {
+  return (
     <>
-    <p>Name : {name}</p>
-    
-
+      <p>Name : {name}</p>
     </>
-)
+  );
 }
 export default DisplayName;
