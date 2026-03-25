@@ -10,8 +10,8 @@ function Cart() {
       </br>
  
     <ul>
-        {cart.map((item,index)=>(
-            <li key={index}>{item}{" "}
+        {cart.map((item)=>(
+            <li>{item}{" "}
             <button onClick={()=>removeItem(item)}>Remove</button>
             </li>
             

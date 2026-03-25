@@ -33,6 +33,11 @@ import Callback from "./Hooks/Callback";
 import Reducer from "./Hooks/Reducer";
 import Transition from "./Hooks/Transition";
 import Cart from "./Hooks/Cart";
+import Optimistic from "./Hooks/Optimistic";
+import ClientCall from "./ServerFunc/ClientCall";
+import Client from "./ServerFunc/FormAction/client";
+
+
 const LoginForm = lazy(() => import("./FunctionalCom/LoginForm"));
 
 // function onRender(id,phase,actualDuation,baseDuration,startTime,commitTime,interactions){
@@ -42,7 +47,7 @@ const LoginForm = lazy(() => import("./FunctionalCom/LoginForm"));
 function App() {
   return (
     <>
-      <my-element>Sanjay</my-element>
+      <my-element >React App</my-element>
       <ErrorBoundary fallback={<p>Something went worng, try later</p>}>
         <BrowserRouter>
           <Suspense fallback={<h2>Loading....</h2>}>
@@ -80,6 +85,12 @@ function App() {
               <Route path="/reducer" element={<Reducer />} />
               <Route path="/transition" element={<Transition />} />
               <Route path="/cart" element={<Cart />} />
+              <Route path="/optimistic" element={<Optimistic/>} />
+              
+              <Route path="/clientcall" element={<ClientCall/>}/>
+              <Route path="/client" elemeent={<Client/>}/>
+              
+            
             </Routes>
           </Suspense>
         </BrowserRouter>
