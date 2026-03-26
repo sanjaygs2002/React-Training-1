@@ -24,6 +24,8 @@ function FormHook() {
     watch,
   } = useForm();
   const password = watch("password");
+
+  
   function data(data) {
     console.log("Form submitted data is ", data);
     reset();

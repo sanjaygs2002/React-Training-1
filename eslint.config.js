@@ -2,6 +2,7 @@ import js from "@eslint/js";
 import globals from "globals";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
+import vitest from "eslint-plugin-vitest"; // ✅ ADD THIS
 import { defineConfig, globalIgnores } from "eslint/config";
 
 export default defineConfig([
@@ -15,12 +16,18 @@ export default defineConfig([
     ],
     languageOptions: {
       ecmaVersion: 2020,
-      globals: globals.browser,
+      globals: {
+        ...globals.browser,
+        ...vitest.environments.env.globals, // ✅ ADD THIS LINE
+      },
       parserOptions: {
         ecmaVersion: "latest",
         ecmaFeatures: { jsx: true },
         sourceType: "module",
       },
+    },
+    plugins: {
+      vitest, // ✅ REGISTER PLUGIN
     },
     rules: {
       "no-unused-vars": ["error", { varsIgnorePattern: "^[A-Z_]" }],

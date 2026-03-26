@@ -36,6 +36,7 @@ import Cart from "./Hooks/Cart";
 import Optimistic from "./Hooks/Optimistic";
 import ClientCall from "./ServerFunc/ClientCall";
 import Client from "./ServerFunc/FormAction/client";
+import Ref from "./Hooks/Ref";
 
 
 const LoginForm = lazy(() => import("./FunctionalCom/LoginForm"));
@@ -89,8 +90,9 @@ function App() {
               
               <Route path="/clientcall" element={<ClientCall/>}/>
               <Route path="/client" elemeent={<Client/>}/>
+              <Route path="/ref" element={<Ref/>}/>
               
-            
+
             </Routes>
           </Suspense>
         </BrowserRouter>
