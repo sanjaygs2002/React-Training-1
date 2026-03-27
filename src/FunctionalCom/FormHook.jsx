@@ -21,11 +21,9 @@ function FormHook() {
     handleSubmit,
     formState: { errors },
     reset,
-    watch,
+    
   } = useForm();
-  const password = watch("password");
 
-  
   function data(data) {
     console.log("Form submitted data is ", data);
     reset();
@@ -56,7 +54,6 @@ function FormHook() {
         />
 
         {errors.password && <p>{errors.password.message}</p>}
-        {password && <p>Password Length: {password.length}</p>}
         <button type="submit">Submit</button>
       </form>
     </>

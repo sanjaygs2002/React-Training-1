@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Counter from "./ClassComponents/counter";
+// import Counter from "./ClassComponents/counter";
 import LifeCycle from "./ClassComponents/LifeCycle";
 import ParentCom from "./FunctionalCom/ParentCom";
 import State from "./FunctionalCom/State";
@@ -22,7 +22,7 @@ import ProContext from "./Context/ProContext";
 import ParentRef from "./ForwardRef/ParentRef";
 import Sample from "./Accessibility/sample";
 import ApiCall from "./UseEffectHook/ApiCall";
-import Timer from "./UseEffectHook/Timers";
+import Timer from "./UseEffectHook/Timer";
 import Consume from "./Context/Auth/Consume";
 import Provider from "./Context/Auth/Provider";
 import { ErrorBoundary } from "react-error-boundary";
@@ -37,7 +37,7 @@ import Optimistic from "./Hooks/Optimistic";
 import ClientCall from "./ServerFunc/ClientCall";
 import Client from "./ServerFunc/FormAction/client";
 import Ref from "./Hooks/Ref";
-
+import Counter from "./Counter";
 
 const LoginForm = lazy(() => import("./FunctionalCom/LoginForm"));
 
@@ -48,7 +48,7 @@ const LoginForm = lazy(() => import("./FunctionalCom/LoginForm"));
 function App() {
   return (
     <>
-      <my-element >React App</my-element>
+      <my-element>React App</my-element>
       <ErrorBoundary fallback={<p>Something went worng, try later</p>}>
         <BrowserRouter>
           <Suspense fallback={<h2>Loading....</h2>}>
@@ -86,13 +86,12 @@ function App() {
               <Route path="/reducer" element={<Reducer />} />
               <Route path="/transition" element={<Transition />} />
               <Route path="/cart" element={<Cart />} />
-              <Route path="/optimistic" element={<Optimistic/>} />
-              
-              <Route path="/clientcall" element={<ClientCall/>}/>
-              <Route path="/client" elemeent={<Client/>}/>
-              <Route path="/ref" element={<Ref/>}/>
-              
+              <Route path="/optimistic" element={<Optimistic />} />
 
+              <Route path="/clientcall" element={<ClientCall />} />
+              <Route path="/client" elemeent={<Client />} />
+              <Route path="/ref" element={<Ref />} />
+              <Route path="/counter" element={<Counter/>}/>
             </Routes>
           </Suspense>
         </BrowserRouter>

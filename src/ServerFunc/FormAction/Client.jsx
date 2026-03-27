@@ -1,12 +1,12 @@
 import Server from "./Server";
-function Client(){
-return(
+function Client() {
+  return (
     <>
-    <form action={Server}>
+      <form action={Server}>
         <input type="text" placeholder="Enter the name" />
         <button type="submit">Submit</button>
-    </form>
+      </form>
     </>
-)
+  );
 }
 export default Client;

@@ -13,11 +13,7 @@ export default function Page() {
 
   return (
     <div>
-      
-
-      <button onClick={handleClick}>
-        Call Server Function
-      </button>
+      <button onClick={handleClick}>Call Server Function</button>
 
       <p>{message}</p>
     </div>
