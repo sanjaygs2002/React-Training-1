@@ -38,6 +38,11 @@ import ClientCall from "./ServerFunc/ClientCall";
 import Client from "./ServerFunc/FormAction/client";
 import Ref from "./Hooks/Ref";
 import Counter from "./Counter";
+import { Axios } from "axios";
+import UserData from "./Axios/UserData";
+import ListElement from "./ListElement";
+import AsyncData from "./AsyncData";
+import UserForm from "./Axios/UserForm";
 
 const LoginForm = lazy(() => import("./FunctionalCom/LoginForm"));
 
@@ -92,6 +97,10 @@ function App() {
               <Route path="/client" elemeent={<Client />} />
               <Route path="/ref" element={<Ref />} />
               <Route path="/counter" element={<Counter/>}/>
+              <Route path="/axios" element={<UserData/>}/>
+              <Route path="listing" element={<ListElement/>}/>
+              <Route path="asyncData" element={<AsyncData/>}/>
+              <Route path="interceptor" element={<UserForm/>}/>
             </Routes>
           </Suspense>
         </BrowserRouter>
