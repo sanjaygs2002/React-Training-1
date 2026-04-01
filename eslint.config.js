@@ -21,6 +21,10 @@ export default defineConfig([
         ...globals.browser,
         ...vitest.environments.env.globals, // ✅ ADD THIS LINE
       },
+      plugins: ["jest"],
+  env: {
+    jest: true,
+  },
       parserOptions: {
         ecmaVersion: "latest",
         ecmaFeatures: { jsx: true },

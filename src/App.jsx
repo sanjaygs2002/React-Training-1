@@ -43,7 +43,10 @@ import UserData from "./Axios/UserData";
 import ListElement from "./ListElement";
 import AsyncData from "./AsyncData";
 import UserForm from "./Axios/UserForm";
-
+import Product from "./NormalRedux/Product";
+import ShowItem from "./NormalRedux/ShowItem"
+import Products from "./ReduxToolkit/Products";
+import ShowItems from "./ReduxToolkit/ShowItems"
 const LoginForm = lazy(() => import("./FunctionalCom/LoginForm"));
 
 // function onRender(id,phase,actualDuation,baseDuration,startTime,commitTime,interactions){
@@ -101,6 +104,11 @@ function App() {
               <Route path="listing" element={<ListElement/>}/>
               <Route path="asyncData" element={<AsyncData/>}/>
               <Route path="interceptor" element={<UserForm/>}/>
+              <Route path ="/products" element={<Product/>}/>
+              <Route path="/showitem" element={<ShowItem/>}/>
+              <Route path ="/product" element={<Products/>}/>
+              <Route path="/showItems" element={<ShowItems/>}/>
+
             </Routes>
           </Suspense>
         </BrowserRouter>

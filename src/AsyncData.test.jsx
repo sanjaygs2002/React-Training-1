@@ -1,22 +1,31 @@
-import { expect, test, vi } from "vitest";
-import { render,screen } from "@testing-library/react";
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom";
 import AsyncData from "./AsyncData";
 
+describe("AsyncData Component", () => {
+  afterEach(() => {
+    jest.restoreAllMocks();
+  });
 
-test("Asynchronous data",async ()=>{
-    const mocks=[{id:1,name:"Sanjay"},{id:2,name:"Ram"}];
+  test("fetches and displays data (success case)", async () => {
+    const mocks = [
+      { id: 1, name: "Sanjay" },
+      { id: 2, name: "Ram" },
+    ];
 
-   
+    // ✅ define fetch first
+    global.fetch = jest.fn();
 
-    global.fetch= vi.fn(()=>
-    Promise.resolve({
-        json:()=>Promise.resolve(mocks)
-    })
-    )
-     render(<AsyncData/>)
+    jest.spyOn(global, "fetch").mockResolvedValue({
+      json: async () => mocks,
+    });
 
-     const item= await screen.findAllByRole("listitem")
+    render(<AsyncData />);
 
-     expect(item).toHaveLength(2);
+    const items = await screen.findAllByRole("listitem");
 
-})
+    expect(items).toHaveLength(2);
+  });
+});
+
