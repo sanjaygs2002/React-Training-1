@@ -47,6 +47,10 @@ import Product from "./NormalRedux/Product";
 import ShowItem from "./NormalRedux/ShowItem"
 import Products from "./ReduxToolkit/Products";
 import ShowItems from "./ReduxToolkit/ShowItems"
+import HandleProducts from "./NormalRedux/HandleProducts";
+import DataList from "./ReduxToolkit/DataList";
+import ProductList from "./ReduxSaga/ProductList";
+import QueryData from "./RTK-Query/QueryData";
 const LoginForm = lazy(() => import("./FunctionalCom/LoginForm"));
 
 // function onRender(id,phase,actualDuation,baseDuration,startTime,commitTime,interactions){
@@ -108,7 +112,10 @@ function App() {
               <Route path="/showitem" element={<ShowItem/>}/>
               <Route path ="/product" element={<Products/>}/>
               <Route path="/showItems" element={<ShowItems/>}/>
-
+              <Route path="/fetchProducts" element={<HandleProducts/>}/>
+              <Route path="/datalist" element={<DataList/>}/>
+              <Route path="/productList" element={<ProductList/>}/>
+              <Route path="/querydata" element={<QueryData/>}/>
             </Routes>
           </Suspense>
         </BrowserRouter>

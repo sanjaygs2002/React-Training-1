@@ -6,8 +6,9 @@ import App from "./App.jsx";
 import Providers from "./Context/Auth/Provider.jsx";
 import { Provider } from "react-redux";
 // import store from "./NormalRedux/store.js";
-import store from "./ReduxToolkit/store.js";
-
+// import store from "./ReduxToolkit/store.js";
+// import store from "./ReduxSaga/store.js";
+import store from "./RTK-Query/store.js";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Provider store={store}>
